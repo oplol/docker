@@ -9,7 +9,7 @@ ENV DIRPATH /usr/local/tomcat
 WORKDIR $DIRPATH/conf
 
 #add manager-gui to tomcat
-RUN sed -i '$s|^|<role rolename=\"manager-gui\"/>\n<user username=\"lfstomcat\" password=\"c0nn3ct\" roles=\"manager-gui\"/>\n|g' tomcat-users.xml
+RUN sed -i '$s|^|<role rolename=\"manager-gui\"/>\n<user username=\"username\" password=\"password\" roles=\"manager-gui\"/>\n|g' tomcat-users.xml
 
 #change work dir to manager page
 WORKDIR ../webapps/manager/META-INF
